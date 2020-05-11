@@ -1,19 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Meal Radius (Continued)</name>
-  	<packageId>Mlie.MealRadius</packageId>
-	<author>Mlie</author>
-	<url>https://github.com/emipa606/MealRadius</url>
-	<supportedVersions>
-		<li>1.0</li>
-		<li>1.1</li>
-	</supportedVersions>
-	<modDependencies />
-	<loadAfter />
-	<description>Update of fed1s mod for RimWorld 1.1
+  <packageId>Mlie.MealRadius</packageId>
+  <author>Mlie</author>
+  <url>https://github.com/emipa606/MealRadius</url>
+  <supportedVersions>
+    <li>1.0</li>
+    <li>1.1</li>
+  </supportedVersions>
+  <modDependencies />
+  <loadAfter />
+  <description>Update of fed1s mod for RimWorld 1.1
 https://steamcommunity.com/sharedfiles/filedetails/?id=1544932892
 
 [img]https://raw.githubusercontent.com/emipa606/RimWorld-Wrapper/master/Notice.png[/img]
+
+[img]https://i.imgur.com/GYswkZ7.png[/img]
 
 Support-chat:
 https://discord.gg/SuhwVpM
@@ -25,8 +27,8 @@ https://github.com/emipa606/MealRadius
 Pawns now eat at the table (not on the ground), if it in 128 tiles radius.
 It works only with meals, nutrient paste, survival pack and pemmican. Raw food and animal products excluded.
 
-Колонисты начинают ходить есть за стол, если тот находится в радиусе 128 клеток.
-Едят только блюда, сухпайки и пеммикан. Сырые продукты и продукты животных едят как есть.
+????????? ???????? ?????? ???? ?? ????, ???? ??? ????????? ? ??????? 128 ??????.
+???? ?????? ?????, ???????? ? ????????. ????? ???????? ? ???????? ???????? ???? ??? ????.
 
 Meal radius B19 https://steamcommunity.com/sharedfiles/filedetails/?id=1504716613</description>
 </ModMetaData>

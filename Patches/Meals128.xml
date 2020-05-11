@@ -1,49 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    
-
-	<Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "MealSurvivalPack"]/ingestible</xpath>
-	  <value>
-	  <chairSearchRadius>128</chairSearchRadius>
-	  </value>
-	</Operation>
-	
-	<Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "MealNutrientPaste"]/ingestible</xpath>
-	  <value>
-	  <chairSearchRadius>128</chairSearchRadius>
-	  </value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "MealLavish"]/ingestible</xpath>
-	  <value>
-	  <chairSearchRadius>128</chairSearchRadius>
-	  </value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "MealFine"]/ingestible</xpath>
-	  <value>
-	  <chairSearchRadius>128</chairSearchRadius>
-	  </value>
-	</Operation>
-	
-	<Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "MealSimple"]/ingestible</xpath>
-	  <value>
-	  <chairSearchRadius>128</chairSearchRadius>
-	  </value>
-	</Operation>
-	
-	<Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[defName = "Pemmican"]/ingestible</xpath>
-	  <value>
-	  <chairSearchRadius>128</chairSearchRadius>
-	  </value>
-	</Operation>
-	
-	
-  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="MealBase"]/ingestible</xpath>
+    <value>
+      <chairSearchRadius>128</chairSearchRadius>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[@Name="MealBase"]</xpath>
+    <value>
+      <li Class="MealRadius.IsMealBase" />
+    </value>
+  </Operation>
 </Patch>
