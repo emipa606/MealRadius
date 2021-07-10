@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using RimWorld;
 using Verse;
 
 namespace MealRadius.Settings
@@ -12,8 +11,8 @@ namespace MealRadius.Settings
 
         public void ChangeDef()
         {
-            List<ThingDef> list = DefDatabase<ThingDef>.AllDefs.ToList();
-            foreach (ThingDef thingDef in list)
+            var list = DefDatabase<ThingDef>.AllDefs.ToList();
+            foreach (var thingDef in list)
             {
                 try
                 {
@@ -22,7 +21,7 @@ namespace MealRadius.Settings
                         thingDef.ingestible.chairSearchRadius = MealRadius;
                     }
                 }
-                catch (System.Exception exception)
+                catch (Exception exception)
                 {
                     Log.Message($"Failed to set range for {thingDef.defName} " + exception);
                 }
@@ -31,8 +30,8 @@ namespace MealRadius.Settings
 
         public static void ChangeDefPost()
         {
-            List<ThingDef> list = DefDatabase<ThingDef>.AllDefs.ToList();
-            foreach (ThingDef thingDef in list)
+            var list = DefDatabase<ThingDef>.AllDefs.ToList();
+            foreach (var thingDef in list)
             {
                 try
                 {
@@ -41,7 +40,7 @@ namespace MealRadius.Settings
                         thingDef.ingestible.chairSearchRadius = MealRadius;
                     }
                 }
-                catch (System.Exception exception)
+                catch (Exception exception)
                 {
                     Log.Message($"Failed to set range for {thingDef.defName} " + exception);
                 }
@@ -52,9 +51,7 @@ namespace MealRadius.Settings
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref MealRadius, "MealRadius", 0.0f, false);
+            Scribe_Values.Look(ref MealRadius, "MealRadius");
         }
-
-
     }
 }

@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using RimWorld.Planet;
 using Verse;
 
 namespace MealRadius
 {
-    public class IsMealBase : DefModExtension
-    {
-    }
-
     // Token: 0x0200000F RID: 15
     internal class WorldComp : WorldComponent
     {
@@ -20,23 +15,24 @@ namespace MealRadius
         public override void FinalizeInit()
         {
             base.FinalizeInit();
-            float searchRadius = LoadedModManager.GetMod<MealRadiusMod>().GetSettings<MealRadiusSettings>().searchRadius;
-            List<ThingDef> list = DefDatabase<ThingDef>.AllDefs.ToList();
-            foreach (ThingDef thingDef in list)
+            var searchRadius = LoadedModManager.GetMod<MealRadiusMod>().GetSettings<MealRadiusSettings>().searchRadius;
+            var list = DefDatabase<ThingDef>.AllDefs.ToList();
+            foreach (var thingDef in list)
             {
                 try
                 {
                     if (thingDef.HasModExtension<IsMealBase>())
                     {
-                        thingDef.ingestible.chairSearchRadius =  searchRadius;
+                        thingDef.ingestible.chairSearchRadius = searchRadius;
                     }
                 }
-                catch (System.Exception exception)
+                catch (Exception exception)
                 {
                     Log.Message($"Failed to set range for {thingDef.defName} " + exception);
                 }
             }
-            Log.Message("MealRadius - Settings loaded", false);
+
+            Log.Message("MealRadius - Settings loaded");
         }
     }
 }
