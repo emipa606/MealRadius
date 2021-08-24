@@ -1,5 +1,8 @@
 # Changelog for MealRadius
 
+1.0.4.0 - Republish since the beta-binaries had some issues
+
+
 1.0.3.0 - Mod updated for 1.3 and passed autotests
 
 
