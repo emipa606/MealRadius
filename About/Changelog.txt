@@ -1,5 +1,8 @@
 # Changelog for MealRadius
 
+1.0.5.0 - Fixed the issue caused by the recent Rimworld patch. Now modifies MealBaseIngredientless instead of MealBase
+
+
 1.0.4.0 - Republish since the beta-binaries had some issues
 
 
