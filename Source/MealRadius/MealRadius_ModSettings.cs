@@ -1,57 +1,54 @@
-﻿using System;
+using System;
 using System.Linq;
 using Verse;
 
-namespace MealRadius.Settings
+namespace MealRadius.Settings;
+
+internal class MealRadius_ModSettings : ModSettings
 {
-    // Token: 0x0200000D RID: 13
-    internal class MealRadius_ModSettings : ModSettings
+    internal static float MealRadius = 128f;
+
+    public void ChangeDef()
     {
-        internal static float MealRadius = 128f;
-
-        public void ChangeDef()
+        var list = DefDatabase<ThingDef>.AllDefs.ToList();
+        foreach (var thingDef in list)
         {
-            var list = DefDatabase<ThingDef>.AllDefs.ToList();
-            foreach (var thingDef in list)
+            try
             {
-                try
+                if (thingDef.HasModExtension<IsMealBase>())
                 {
-                    if (thingDef.HasModExtension<IsMealBase>())
-                    {
-                        thingDef.ingestible.chairSearchRadius = MealRadius;
-                    }
-                }
-                catch (Exception exception)
-                {
-                    Log.Message($"Failed to set range for {thingDef.defName} " + exception);
+                    thingDef.ingestible.chairSearchRadius = MealRadius;
                 }
             }
-        }
-
-        public static void ChangeDefPost()
-        {
-            var list = DefDatabase<ThingDef>.AllDefs.ToList();
-            foreach (var thingDef in list)
+            catch (Exception exception)
             {
-                try
-                {
-                    if (thingDef.HasModExtension<IsMealBase>())
-                    {
-                        thingDef.ingestible.chairSearchRadius = MealRadius;
-                    }
-                }
-                catch (Exception exception)
-                {
-                    Log.Message($"Failed to set range for {thingDef.defName} " + exception);
-                }
+                Log.Message($"Failed to set range for {thingDef.defName} {exception}");
             }
         }
+    }
 
-        // Token: 0x06000024 RID: 36 RVA: 0x0000345C File Offset: 0x0000165C
-        public override void ExposeData()
+    public static void ChangeDefPost()
+    {
+        var list = DefDatabase<ThingDef>.AllDefs.ToList();
+        foreach (var thingDef in list)
         {
-            base.ExposeData();
-            Scribe_Values.Look(ref MealRadius, "MealRadius");
+            try
+            {
+                if (thingDef.HasModExtension<IsMealBase>())
+                {
+                    thingDef.ingestible.chairSearchRadius = MealRadius;
+                }
+            }
+            catch (Exception exception)
+            {
+                Log.Message($"Failed to set range for {thingDef.defName} {exception}");
+            }
         }
+    }
+
+    public override void ExposeData()
+    {
+        base.ExposeData();
+        Scribe_Values.Look(ref MealRadius, "MealRadius");
     }
 }

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--  Mod Settings -->
+  <MeRa.Range>Search-range for meals: {0}</MeRa.Range>
+  <MeRa.Version>Installed mod-version: {0}</MeRa.Version>
+</LanguageData>

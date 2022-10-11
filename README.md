@@ -6,7 +6,7 @@ Update of fed1s mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1544932892
 
 - Added setting for the search-range
-- Now works on all meals based on the abstract MealBase
+- Now works on all meals based on the abstract [strike]MealBase[/strike]. Changed to MealBaseIngredientless in 1.3
 - Vanilla search-radius is 32
 
 ![Image](https://i.imgur.com/pufA0kM.png)
@@ -34,6 +34,7 @@ Meal radius B19 https://steamcommunity.com/sharedfiles/filedetails/?id=150471661
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 
 
