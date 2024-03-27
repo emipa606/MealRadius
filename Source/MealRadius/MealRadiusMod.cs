@@ -21,7 +21,7 @@ public class MealRadiusMod : Mod
     {
         settings = GetSettings<MealRadiusSettings>();
         currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(ModLister.GetActiveModWithIdentifier("Mlie.MealRadius"));
+            VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
     /// <summary>

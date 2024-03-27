@@ -2,6 +2,4 @@
 
 namespace MealRadius;
 
-public class IsMealBase : DefModExtension
-{
-}
+public class IsMealBase : DefModExtension;
