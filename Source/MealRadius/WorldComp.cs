@@ -7,10 +7,10 @@ namespace MealRadius;
 
 internal class WorldComp(World world) : WorldComponent(world)
 {
-    public override void FinalizeInit()
+    public override void FinalizeInit(bool fromLoad)
     {
-        base.FinalizeInit();
-        var searchRadius = LoadedModManager.GetMod<MealRadiusMod>().GetSettings<MealRadiusSettings>().searchRadius;
+        base.FinalizeInit(fromLoad);
+        var searchRadius = LoadedModManager.GetMod<MealRadiusMod>().GetSettings<MealRadiusSettings>().SearchRadius;
         var list = DefDatabase<ThingDef>.AllDefs.ToList();
         foreach (var thingDef in list)
         {

@@ -32,8 +32,8 @@ public class MealRadiusMod : Mod
     {
         var listingStandard = new Listing_Standard();
         listingStandard.Begin(inRect);
-        listingStandard.Label("MeRa.Range".Translate(settings.searchRadius));
-        settings.searchRadius = listingStandard.Slider(settings.searchRadius, 1f, 300f);
+        listingStandard.Label("MeRa.Range".Translate(settings.SearchRadius));
+        settings.SearchRadius = listingStandard.Slider(settings.SearchRadius, 1f, 300f);
         if (currentVersion != null)
         {
             listingStandard.Gap();
